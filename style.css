@@ -77,8 +77,15 @@ a {
 .dark-section {
     max-width: none;
 
-    padding-left: max(30px, calc((100vw - var(--max-width)) / 2));
-    padding-right: max(30px, calc((100vw - var(--max-width)) / 2));
+    padding-left: max(
+        30px,
+        calc((100vw - var(--max-width)) / 2)
+    );
+
+    padding-right: max(
+        30px,
+        calc((100vw - var(--max-width)) / 2)
+    );
 
     background:
         linear-gradient(
@@ -447,6 +454,8 @@ a {
     justify-content: center;
 
     align-items: center;
+
+    min-height: 450px;
 }
 
 .image-glow {
@@ -492,6 +501,8 @@ a {
 
     box-shadow:
         0 0 60px rgba(0, 229, 255, 0.08);
+
+    z-index: 2;
 }
 
 .profile-image {
@@ -507,19 +518,36 @@ a {
     clip-path: inherit;
 }
 
+
+/* =====================================================
+   IMAGE INFO
+===================================================== */
+
 .image-info {
     position: absolute;
 
     left: 25px;
     bottom: 20px;
 
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 2px;
+
+    min-width: 170px;
+
     padding: 10px 15px;
 
-    background: rgba(5, 8, 22, 0.85);
+    background: rgba(5, 8, 22, 0.90);
 
     backdrop-filter: blur(10px);
 
     border-left: 2px solid var(--primary);
+
+    z-index: 5;
 }
 
 .image-info span {
@@ -529,37 +557,56 @@ a {
 
     font-size: 9px;
 
+    line-height: 1.3;
+
     letter-spacing: 2px;
 }
 
 .image-info strong {
     display: block;
 
-    font-size: 12px;
+    width: 100%;
 
     color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
 }
 
 .image-info small {
     display: block;
 
-    margin-top: 3px;
+    width: 100%;
+
+    margin-top: 2px;
 
     color: var(--primary);
 
-    font-size: 9px;
-
     font-family: monospace;
 
+    font-size: 9px;
+
+    line-height: 1.4;
+
     letter-spacing: 0.5px;
+
+    white-space: nowrap;
 }
+
+
+/* =====================================================
+   FLOATING CARD
+===================================================== */
 
 .floating-card {
     position: absolute;
 
     padding: 10px 15px;
 
-    background: rgba(13, 20, 43, 0.9);
+    background: rgba(13, 20, 43, 0.92);
 
     backdrop-filter: blur(15px);
 
@@ -567,6 +614,8 @@ a {
 
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.3);
+
+    z-index: 4;
 }
 
 .floating-card span {
@@ -583,11 +632,13 @@ a {
 
 .card-one {
     left: -15px;
+
     top: 80px;
 }
 
 .card-two {
     right: -15px;
+
     bottom: 80px;
 }
 
@@ -704,14 +755,6 @@ a {
     gap: 50px;
 
     padding-bottom: 70px;
-
-    background: transparent;
-
-    border: 0;
-
-    box-shadow: none;
-
-    margin: 0;
 }
 
 .timeline-item::before {
@@ -889,8 +932,6 @@ a {
 
     border: 1px solid var(--border);
 
-    border-radius: 0;
-
     overflow: hidden;
 
     transition: 0.4s;
@@ -989,12 +1030,6 @@ a {
     background: rgba(255,255,255,0.02);
 
     border: 1px solid var(--border);
-
-    border-radius: 0;
-
-    box-shadow: none;
-
-    margin: 0;
 }
 
 .education-year {
@@ -1313,6 +1348,10 @@ footer {
         padding: 120px 20px 70px;
     }
 
+    .hero-container {
+        gap: 50px;
+    }
+
     .hero h1 {
         font-size: 48px;
 
@@ -1347,18 +1386,52 @@ footer {
         font-size: 8px;
     }
 
+
+    /* PROFILE HP */
+
+    .hero-image-wrapper {
+        min-height: 380px;
+    }
+
     .image-card {
         width: 260px;
         height: 330px;
     }
 
+    .image-info {
+        left: 18px;
+
+        bottom: 16px;
+
+        min-width: 155px;
+
+        padding: 8px 12px;
+    }
+
+    .image-info span {
+        font-size: 8px;
+    }
+
+    .image-info strong {
+        font-size: 11px;
+    }
+
+    .image-info small {
+        font-size: 8px;
+    }
+
     .card-one {
         left: 0;
+
+        top: 55px;
     }
 
     .card-two {
         right: 0;
+
+        bottom: 55px;
     }
+
 
     .section-heading {
         gap: 15px;
@@ -1440,12 +1513,32 @@ footer {
         height: 300px;
     }
 
+    .hero-image-wrapper {
+        min-height: 350px;
+    }
+
     .hero-stats {
         gap: 12px;
     }
 
     .hero-stats strong {
         font-size: 18px;
+    }
+
+    .image-info {
+        left: 15px;
+
+        bottom: 14px;
+
+        min-width: 145px;
+    }
+
+    .card-one {
+        left: -5px;
+    }
+
+    .card-two {
+        right: -5px;
     }
 
 }
