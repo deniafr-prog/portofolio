@@ -90,8 +90,8 @@ a {
     background:
         linear-gradient(
             180deg,
-            rgba(255,255,255,0.015),
-            rgba(255,255,255,0)
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0)
         );
 }
 
@@ -682,7 +682,7 @@ a {
 
     border: 1px solid var(--border);
 
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
 
     transition: 0.3s;
 }
@@ -690,9 +690,9 @@ a {
 .highlight-card:hover {
     transform: translateY(-5px);
 
-    border-color: rgba(0,229,255,0.4);
+    border-color: rgba(0, 229, 255, 0.4);
 
-    background: rgba(0,229,255,0.04);
+    background: rgba(0, 229, 255, 0.04);
 }
 
 .highlight-card > span {
@@ -717,52 +717,70 @@ a {
 
 
 /* =====================================================
-   EXPERIENCE
+   EXPERIENCE / PROFESSIONAL JOURNEY
 ===================================================== */
 
 .timeline {
     position: relative;
+
+    width: 100%;
 }
+
+
+/* GARIS UTAMA TIMELINE */
 
 .timeline::before {
     content: "";
 
     position: absolute;
 
-    left: 120px;
+    left: 200px;
 
-    top: 0;
-    bottom: 0;
+    top: 5px;
+    bottom: 70px;
 
     width: 1px;
 
     background:
         linear-gradient(
+            to bottom,
             var(--primary),
+            rgba(0, 229, 255, 0.15),
             transparent
         );
 
-    opacity: 0.4;
+    opacity: 0.45;
 }
+
+
+/* SETIAP ITEM */
 
 .timeline-item {
     position: relative;
 
     display: grid;
 
-    grid-template-columns: 200px 1fr;
+    /*
+       170px = area tanggal
+       60px  = jarak menuju garis
+    */
+    grid-template-columns: 170px 1fr;
 
-    gap: 50px;
+    gap: 60px;
 
-    padding-bottom: 70px;
+    padding-bottom: 80px;
 }
+
+
+/* TITIK PADA TIMELINE */
 
 .timeline-item::before {
     content: "";
 
     position: absolute;
 
-    left: 116px;
+    left: 196px;
+
     top: 5px;
 
     width: 9px;
@@ -772,9 +790,17 @@ a {
 
     background: var(--primary);
 
+    border: 3px solid var(--bg);
+
     box-shadow:
-        0 0 15px var(--primary);
+        0 0 0 1px var(--primary),
+        0 0 15px rgba(0, 229, 255, 0.7);
+
+    z-index: 2;
 }
+
+
+/* TANGGAL */
 
 .timeline-date {
     color: var(--primary);
@@ -783,12 +809,32 @@ a {
 
     font-size: 12px;
 
-    padding-top: 2px;
+    line-height: 1.5;
+
+    padding-top: 1px;
+
+    text-align: right;
+
+    padding-right: 5px;
+
+    /*
+       Mencegah tanggal memotong
+       atau masuk ke area garis
+    */
+    white-space: nowrap;
 }
 
+
+/* KONTEN EXPERIENCE */
+
 .timeline-content {
-    padding-left: 25px;
+    padding-left: 0;
+
+    min-width: 0;
 }
+
+
+/* TIPE PEKERJAAN */
 
 .job-type {
     color: var(--primary);
@@ -798,15 +844,25 @@ a {
     font-size: 10px;
 
     letter-spacing: 2px;
+
+    margin-bottom: 6px;
 }
+
+
+/* JUDUL PEKERJAAN */
 
 .timeline-content h3 {
     color: var(--text);
 
     font-size: 28px;
 
+    line-height: 1.25;
+
     margin: 7px 0;
 }
+
+
+/* NAMA PERUSAHAAN */
 
 .timeline-content h4 {
     color: var(--text-secondary);
@@ -814,26 +870,40 @@ a {
     font-size: 17px;
 
     font-weight: 400;
+
+    line-height: 1.5;
 }
+
+
+/* LOKASI */
 
 .location {
     color: #64748b;
 
     font-size: 13px;
 
+    line-height: 1.5;
+
     margin: 4px 0 20px;
 }
+
+
+/* DESKRIPSI PEKERJAAN */
 
 .timeline-content ul {
     padding-left: 18px;
 
     color: var(--text-secondary);
+
+    margin-top: 15px;
 }
 
 .timeline-content li {
     margin-bottom: 10px;
 
     padding-left: 5px;
+
+    line-height: 1.7;
 }
 
 
@@ -860,7 +930,7 @@ a {
 }
 
 .skill-category:hover {
-    border-color: rgba(0,229,255,0.35);
+    border-color: rgba(0, 229, 255, 0.35);
 
     transform: translateY(-5px);
 }
@@ -892,7 +962,7 @@ a {
 .skill-list span {
     padding: 7px 10px;
 
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
 
     border: 1px solid var(--border);
 
@@ -926,8 +996,8 @@ a {
     background:
         linear-gradient(
             145deg,
-            rgba(0,229,255,0.04),
-            rgba(124,58,237,0.03)
+            rgba(0, 229, 255, 0.04),
+            rgba(124, 58, 237, 0.03)
         );
 
     border: 1px solid var(--border);
@@ -940,10 +1010,10 @@ a {
 .project-card:hover {
     transform: translateY(-8px);
 
-    border-color: rgba(0,229,255,0.4);
+    border-color: rgba(0, 229, 255, 0.4);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.3);
+        0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .project-number {
@@ -952,7 +1022,7 @@ a {
     right: 25px;
     top: 15px;
 
-    color: rgba(0,229,255,0.08);
+    color: rgba(0, 229, 255, 0.08);
 
     font-size: 80px;
 
@@ -1004,7 +1074,7 @@ a {
 
     padding: 5px 8px;
 
-    border: 1px solid rgba(0,229,255,0.2);
+    border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
 
@@ -1027,7 +1097,7 @@ a {
 
     padding: 30px;
 
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
 
     border: 1px solid var(--border);
 }
@@ -1122,7 +1192,7 @@ a {
     background:
         radial-gradient(
             circle at center,
-            rgba(0,229,255,0.08),
+            rgba(0, 229, 255, 0.08),
             transparent 45%
         );
 }
@@ -1176,7 +1246,7 @@ a {
 
     padding: 20px;
 
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
 
     border: 1px solid var(--border);
 
@@ -1202,7 +1272,7 @@ a {
 
     color: var(--primary);
 
-    border: 1px solid rgba(0,229,255,0.3);
+    border: 1px solid rgba(0, 229, 255, 0.3);
 
     font-family: monospace;
 }
@@ -1269,6 +1339,9 @@ footer {
         gap: 15px;
     }
 
+
+    /* HERO */
+
     .hero-container {
         grid-template-columns: 1fr;
 
@@ -1300,22 +1373,59 @@ footer {
         text-align: left;
     }
 
+
+    /* ABOUT */
+
     .about-grid {
         grid-template-columns: 1fr;
 
         gap: 50px;
     }
 
+
+    /* SKILLS */
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* PROJECTS */
 
     .projects-grid {
         grid-template-columns: 1fr 1fr;
     }
 
+
+    /* CONTACT */
+
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+
+    /* EXPERIENCE TABLET */
+
+    .timeline::before {
+        left: 165px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 135px 1fr;
+
+        gap: 50px;
+    }
+
+    .timeline-item::before {
+        left: 161px;
+    }
+
+    .timeline-date {
+        font-size: 11px;
+    }
+
+    .timeline-content h3 {
+        font-size: 25px;
     }
 
 }
@@ -1327,6 +1437,8 @@ footer {
 
 @media (max-width: 700px) {
 
+    /* NAVBAR */
+
     .nav-container {
         padding: 15px 20px;
     }
@@ -1334,6 +1446,9 @@ footer {
     .nav-menu {
         display: none;
     }
+
+
+    /* GENERAL */
 
     .section {
         padding: 85px 20px;
@@ -1343,6 +1458,9 @@ footer {
         padding-left: 20px;
         padding-right: 20px;
     }
+
+
+    /* HERO */
 
     .hero {
         padding: 120px 20px 70px;
@@ -1433,6 +1551,8 @@ footer {
     }
 
 
+    /* SECTION HEADING */
+
     .section-heading {
         gap: 15px;
 
@@ -1443,24 +1563,67 @@ footer {
         font-size: 34px;
     }
 
+
+    /* ABOUT */
+
     .about-highlights {
         grid-template-columns: 1fr;
     }
 
+
+    /* =================================================
+       EXPERIENCE HP
+    ================================================= */
+
+    /*
+       Garis dipindahkan ke sisi kiri
+       agar tanggal tidak bertabrakan.
+    */
+
+    .timeline {
+        padding-left: 0;
+    }
+
     .timeline::before {
         left: 5px;
+
+        top: 5px;
+        bottom: 50px;
     }
 
     .timeline-item {
+        display: grid;
+
         grid-template-columns: 1fr;
 
-        gap: 10px;
+        gap: 8px;
 
         padding-left: 30px;
+
+        padding-bottom: 60px;
     }
 
     .timeline-item::before {
         left: 1px;
+
+        top: 5px;
+
+        width: 9px;
+        height: 9px;
+    }
+
+    .timeline-date {
+        text-align: left;
+
+        padding-right: 0;
+
+        white-space: normal;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+
+        margin-bottom: 5px;
     }
 
     .timeline-content {
@@ -1469,11 +1632,33 @@ footer {
 
     .timeline-content h3 {
         font-size: 22px;
+
+        line-height: 1.3;
     }
+
+    .timeline-content h4 {
+        font-size: 15px;
+    }
+
+    .timeline-content ul {
+        padding-left: 17px;
+    }
+
+    .timeline-content li {
+        font-size: 14px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* PROJECTS */
 
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* EDUCATION */
 
     .education-card {
         grid-template-columns: 1fr;
@@ -1481,13 +1666,22 @@ footer {
         gap: 10px;
     }
 
+
+    /* CERTIFICATES */
+
     .certificate-item {
         grid-template-columns: 60px 1fr;
     }
 
+
+    /* CONTACT */
+
     .contact-container h2 {
         font-size: 40px;
     }
+
+
+    /* FOOTER */
 
     .footer-container {
         flex-direction: column;
@@ -1504,9 +1698,14 @@ footer {
 
 @media (max-width: 400px) {
 
+    /* HERO */
+
     .hero h1 {
         font-size: 40px;
     }
+
+
+    /* PROFILE */
 
     .image-card {
         width: 230px;
@@ -1517,6 +1716,9 @@ footer {
         min-height: 350px;
     }
 
+
+    /* STATS */
+
     .hero-stats {
         gap: 12px;
     }
@@ -1524,6 +1726,9 @@ footer {
     .hero-stats strong {
         font-size: 18px;
     }
+
+
+    /* IMAGE INFO */
 
     .image-info {
         left: 15px;
@@ -1533,12 +1738,38 @@ footer {
         min-width: 145px;
     }
 
+
+    /* FLOATING CARD */
+
     .card-one {
         left: -5px;
     }
 
     .card-two {
         right: -5px;
+    }
+
+
+    /* EXPERIENCE */
+
+    .timeline-item {
+        padding-left: 27px;
+    }
+
+    .timeline-date {
+        font-size: 10px;
+    }
+
+    .timeline-content h3 {
+        font-size: 20px;
+    }
+
+    .timeline-content h4 {
+        font-size: 14px;
+    }
+
+    .timeline-content li {
+        font-size: 13px;
     }
 
 }
