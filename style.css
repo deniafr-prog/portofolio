@@ -23,6 +23,7 @@ html {
 
     --text: #f8fafc;
     --text-secondary: #94a3b8;
+
     --border: rgba(148, 163, 184, 0.15);
 
     --max-width: 1180px;
@@ -598,7 +599,7 @@ a {
 
 
 /* =====================================================
-   FLOATING CARD
+   FLOATING CARDS
 ===================================================== */
 
 .floating-card {
@@ -717,22 +718,9 @@ a {
 
 
 /* =====================================================
-   EXPERIENCE
    PROFESSIONAL JOURNEY
+   TIMELINE
 ===================================================== */
-
-/*
-   STRUKTUR DESKTOP:
-
-   TANGGAL        GARIS        KONTEN
-   2025 ───────────●────────── IT SUPPORT
-                                   ...
-   2025 ───────────●────────── ADMINISTRATION
-                                   ...
-   2021 ───────────●────────── ADMINISTRATION
-                                   ...
-*/
-
 
 .timeline {
     position: relative;
@@ -741,82 +729,74 @@ a {
 }
 
 
-/* -----------------------------------------------------
-   GARIS TIMELINE DESKTOP
------------------------------------------------------ */
+/* =====================================================
+   GARIS UTAMA TIMELINE
+===================================================== */
+
+/*
+   GARIS DIBUAT BENAR-BENAR SOLID
+
+   Tidak menggunakan:
+   - linear-gradient
+   - transparent
+   - rgba
+   - opacity < 1
+   - shadow
+*/
 
 .timeline::before {
     content: "";
 
     position: absolute;
 
-    /*
-       Garis berada di antara
-       tanggal dan konten
-    */
     left: 200px;
 
     top: 5px;
 
-    /*
-       Sampai bagian paling bawah
-       timeline
-    */
     bottom: 0;
 
     width: 2px;
 
-    background: var(--primary);
+    background: #00e5ff;
 
-    opacity: 0.45;
+    opacity: 1;
 
-    z-index: 0;
+    z-index: 1;
 }
 
 
-/* -----------------------------------------------------
-   ITEM TIMELINE
------------------------------------------------------ */
+/* =====================================================
+   ITEM EXPERIENCE
+===================================================== */
 
 .timeline-item {
     position: relative;
 
     display: grid;
 
-    /*
-       Kolom 1 = tanggal
-       Kolom 2 = konten
-
-       Garis berada di batas
-       antara kedua area
-    */
     grid-template-columns: 170px 1fr;
 
-    /*
-       Jarak antara tanggal
-       dan konten
-    */
     gap: 60px;
 
-    /*
-       Jarak antar pekerjaan
-    */
     padding-bottom: 65px;
+
+    z-index: 2;
 }
 
 
 /*
-   Item terakhir tidak perlu
-   ruang ekstra terlalu besar
+   Experience terakhir tidak diberikan
+   padding bawah tambahan.
 */
+
 .timeline-item:last-child {
     padding-bottom: 0;
 }
 
 
-/* -----------------------------------------------------
+/* =====================================================
    TITIK TIMELINE
------------------------------------------------------ */
+===================================================== */
 
 .timeline-item::before {
     content: "";
@@ -824,9 +804,12 @@ a {
     position: absolute;
 
     /*
-       200px = posisi garis
-       Titik dibuat tepat di tengah garis
+       Garis = 200px
+       Titik = 10px
+
+       200 - 5 = 195
     */
+
     left: 195px;
 
     top: 1px;
@@ -836,28 +819,28 @@ a {
 
     border-radius: 50%;
 
-    background: var(--primary);
+    background: #00e5ff;
+
+    border: 2px solid #050816;
 
     /*
-       Border mengikuti background
-       agar titik terlihat jelas
+       Glow hanya pada titik
     */
-    border: 2px solid var(--bg);
 
     box-shadow:
-        0 0 0 1px var(--primary),
-        0 0 15px rgba(0, 229, 255, 0.7);
+        0 0 0 1px #00e5ff,
+        0 0 12px rgba(0, 229, 255, 0.7);
 
-    z-index: 3;
+    z-index: 5;
 }
 
 
-/* -----------------------------------------------------
-   TANGGAL
------------------------------------------------------ */
+/* =====================================================
+   TANGGAL EXPERIENCE
+===================================================== */
 
 .timeline-date {
-    color: var(--primary);
+    color: #00e5ff;
 
     font-family: monospace;
 
@@ -867,33 +850,33 @@ a {
 
     padding-top: 0;
 
-    /*
-       Tanggal rata kanan,
-       menjauh dari garis
-    */
     text-align: right;
 
     padding-right: 5px;
 
     white-space: nowrap;
+
+    z-index: 3;
 }
 
 
-/* -----------------------------------------------------
-   KONTEN
------------------------------------------------------ */
+/* =====================================================
+   KONTEN EXPERIENCE
+===================================================== */
 
 .timeline-content {
     padding-left: 0;
 
     min-width: 0;
+
+    z-index: 3;
 }
 
 
-/* JOB TYPE */
+/* LABEL PEKERJAAN */
 
 .job-type {
-    color: var(--primary);
+    color: #00e5ff;
 
     font-family: monospace;
 
@@ -905,10 +888,10 @@ a {
 }
 
 
-/* JOB TITLE */
+/* JUDUL PEKERJAAN */
 
 .timeline-content h3 {
-    color: var(--text);
+    color: #f8fafc;
 
     font-size: 28px;
 
@@ -918,10 +901,10 @@ a {
 }
 
 
-/* COMPANY */
+/* PERUSAHAAN */
 
 .timeline-content h4 {
-    color: var(--text-secondary);
+    color: #94a3b8;
 
     font-size: 17px;
 
@@ -931,7 +914,7 @@ a {
 }
 
 
-/* LOCATION */
+/* LOKASI */
 
 .location {
     color: #64748b;
@@ -944,12 +927,12 @@ a {
 }
 
 
-/* EXPERIENCE LIST */
+/* LIST EXPERIENCE */
 
 .timeline-content ul {
     padding-left: 18px;
 
-    color: var(--text-secondary);
+    color: #94a3b8;
 
     margin-top: 12px;
 }
@@ -1321,6 +1304,7 @@ a {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 40px;
@@ -1386,10 +1370,12 @@ footer {
 
 
 /* =====================================================
-   RESPONSIVE TABLET
+   TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
+
+    /* NAVBAR */
 
     .nav-menu {
         gap: 15px;
@@ -1422,6 +1408,7 @@ footer {
 
     .hero-stats {
         margin-left: auto;
+
         margin-right: auto;
 
         justify-content: center;
@@ -1460,10 +1447,16 @@ footer {
     }
 
 
-    /* EXPERIENCE TABLET */
+    /* TIMELINE */
 
     .timeline::before {
         left: 165px;
+
+        width: 2px;
+
+        background: #00e5ff;
+
+        opacity: 1;
     }
 
     .timeline-item {
@@ -1474,6 +1467,10 @@ footer {
 
     .timeline-item::before {
         left: 160px;
+
+        width: 10px;
+
+        height: 10px;
     }
 
     .timeline-date {
@@ -1483,12 +1480,11 @@ footer {
     .timeline-content h3 {
         font-size: 25px;
     }
-
 }
 
 
 /* =====================================================
-   RESPONSIVE HP
+   MOBILE
 ===================================================== */
 
 @media (max-width: 700px) {
@@ -1512,6 +1508,7 @@ footer {
 
     .dark-section {
         padding-left: 20px;
+
         padding-right: 20px;
     }
 
@@ -1569,6 +1566,7 @@ footer {
 
     .image-card {
         width: 260px;
+
         height: 330px;
     }
 
@@ -1628,20 +1626,23 @@ footer {
 
 
     /* =================================================
-       EXPERIENCE HP
+       TIMELINE MOBILE
     ================================================= */
 
-    /*
-       Pada HP timeline berubah menjadi
-       satu kolom.
-    */
-
     .timeline {
+        position: relative;
+
+        width: 100%;
+
         padding-left: 0;
     }
 
 
-    /* GARIS HP */
+    /*
+       GARIS MOBILE
+
+       Tetap SOLID.
+    */
 
     .timeline::before {
         left: 5px;
@@ -1652,15 +1653,19 @@ footer {
 
         width: 2px;
 
-        background: var(--primary);
+        background: #00e5ff;
 
-        opacity: 0.45;
+        opacity: 1;
+
+        z-index: 1;
     }
 
 
-    /* ITEM HP */
+    /* ITEM */
 
     .timeline-item {
+        position: relative;
+
         display: grid;
 
         grid-template-columns: 1fr;
@@ -1670,6 +1675,8 @@ footer {
         padding-left: 30px;
 
         padding-bottom: 55px;
+
+        z-index: 2;
     }
 
 
@@ -1678,7 +1685,9 @@ footer {
     }
 
 
-    /* TITIK HP */
+    /*
+       TITIK TEPAT DI GARIS
+    */
 
     .timeline-item::before {
         left: 0;
@@ -1686,17 +1695,22 @@ footer {
         top: 1px;
 
         width: 10px;
+
         height: 10px;
 
-        border: 2px solid var(--bg);
+        background: #00e5ff;
+
+        border: 2px solid #050816;
 
         box-shadow:
-            0 0 0 1px var(--primary),
-            0 0 12px rgba(0, 229, 255, 0.7);
+            0 0 0 1px #00e5ff,
+            0 0 10px rgba(0, 229, 255, 0.7);
+
+        z-index: 5;
     }
 
 
-    /* TANGGAL HP */
+    /* TANGGAL */
 
     .timeline-date {
         text-align: left;
@@ -1713,7 +1727,7 @@ footer {
     }
 
 
-    /* KONTEN HP */
+    /* CONTENT */
 
     .timeline-content {
         padding-left: 0;
@@ -1781,12 +1795,11 @@ footer {
 
         text-align: center;
     }
-
 }
 
 
 /* =====================================================
-   SMALL HP
+   SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 400px) {
@@ -1797,6 +1810,7 @@ footer {
 
     .image-card {
         width: 230px;
+
         height: 300px;
     }
 
@@ -1829,7 +1843,7 @@ footer {
     }
 
 
-    /* EXPERIENCE SMALL HP */
+    /* TIMELINE SMALL HP */
 
     .timeline-item {
         padding-left: 27px;
@@ -1850,5 +1864,4 @@ footer {
     .timeline-content li {
         font-size: 13px;
     }
-
 }
