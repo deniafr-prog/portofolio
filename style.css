@@ -1,3 +1,4 @@
+```css
 /* =====================================================
    GLOBAL
 ===================================================== */
@@ -178,6 +179,8 @@ a {
     align-items: center;
 
     justify-content: space-between;
+
+    gap: 30px;
 }
 
 .logo {
@@ -190,6 +193,10 @@ a {
     font-weight: bold;
 
     letter-spacing: -1px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
 }
 
 .logo span {
@@ -202,6 +209,8 @@ a {
     list-style: none;
 
     gap: 28px;
+
+    align-items: center;
 }
 
 .nav-menu a {
@@ -214,6 +223,8 @@ a {
     font-size: 14px;
 
     transition: 0.3s;
+
+    white-space: nowrap;
 }
 
 .nav-menu a:hover {
@@ -1009,12 +1020,6 @@ a {
 
     transition: 0.4s;
 
-    /*
-       PENTING:
-       Project card adalah <a>.
-       Semua dekorasi link dimatikan.
-    */
-
     text-decoration: none !important;
 
     color: inherit !important;
@@ -1023,10 +1028,14 @@ a {
 .project-card:link,
 .project-card:visited,
 .project-card:hover,
-.project-card:active {
+.project-card:active,
+.project-card:focus,
+.project-card:focus-visible {
     text-decoration: none !important;
 
     color: inherit !important;
+
+    outline: none !important;
 }
 
 .project-card:hover {
@@ -1040,17 +1049,24 @@ a {
 
 
 /* =====================================================
-   PROJECT CARD - SEMUA ISI
+   PROJECT CARD - REMOVE UNDERLINE
 ===================================================== */
-
-/*
-   Ini memastikan browser tidak memberikan
-   underline kepada teks di dalam <a>.
-*/
 
 .project-card *,
 .project-card *::before,
 .project-card *::after {
+    text-decoration: none !important;
+
+    text-decoration-line: none !important;
+
+    text-decoration-style: none !important;
+
+    text-decoration-color: transparent !important;
+}
+
+.project-card h3,
+.project-card p,
+.project-card span {
     text-decoration: none !important;
 }
 
@@ -1420,8 +1436,20 @@ footer {
 
     /* NAVBAR */
 
+    .nav-container {
+        gap: 20px;
+    }
+
     .nav-menu {
         gap: 15px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;
     }
 
 
@@ -1532,14 +1560,62 @@ footer {
 
 @media (max-width: 700px) {
 
-    /* NAVBAR */
+    /* =================================================
+       NAVBAR MOBILE
+    ================================================= */
 
     .nav-container {
-        padding: 15px 20px;
+        padding: 13px 15px;
+
+        gap: 15px;
+
+        overflow: hidden;
+
+        justify-content: flex-start;
+    }
+
+    .logo {
+        font-size: 17px;
+
+        letter-spacing: -0.8px;
     }
 
     .nav-menu {
+        display: flex;
+
+        gap: 18px;
+
+        flex: 1;
+
+        min-width: 0;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+
+        padding: 3px 5px 8px;
+    }
+
+    .nav-menu::-webkit-scrollbar {
         display: none;
+    }
+
+    .nav-menu li {
+        flex-shrink: 0;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+
+        white-space: nowrap;
+    }
+
+    .nav-menu a::after {
+        bottom: -5px;
     }
 
 
@@ -1837,6 +1913,31 @@ footer {
 
 @media (max-width: 400px) {
 
+    /* NAVBAR SMALL MOBILE */
+
+    .nav-container {
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 10px;
+    }
+
+
+    /* HERO */
+
     .hero h1 {
         font-size: 40px;
     }
@@ -1898,3 +1999,4 @@ footer {
         font-size: 13px;
     }
 }
+```
