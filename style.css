@@ -733,17 +733,6 @@ a {
    GARIS UTAMA TIMELINE
 ===================================================== */
 
-/*
-   GARIS DIBUAT BENAR-BENAR SOLID
-
-   Tidak menggunakan:
-   - linear-gradient
-   - transparent
-   - rgba
-   - opacity < 1
-   - shadow
-*/
-
 .timeline::before {
     content: "";
 
@@ -783,12 +772,6 @@ a {
     z-index: 2;
 }
 
-
-/*
-   Experience terakhir tidak diberikan
-   padding bawah tambahan.
-*/
-
 .timeline-item:last-child {
     padding-bottom: 0;
 }
@@ -803,13 +786,6 @@ a {
 
     position: absolute;
 
-    /*
-       Garis = 200px
-       Titik = 10px
-
-       200 - 5 = 195
-    */
-
     left: 195px;
 
     top: 1px;
@@ -822,10 +798,6 @@ a {
     background: #00e5ff;
 
     border: 2px solid #050816;
-
-    /*
-       Glow hanya pada titik
-    */
 
     box-shadow:
         0 0 0 1px #00e5ff,
@@ -872,9 +844,6 @@ a {
     z-index: 3;
 }
 
-
-/* LABEL PEKERJAAN */
-
 .job-type {
     color: #00e5ff;
 
@@ -887,9 +856,6 @@ a {
     margin-bottom: 5px;
 }
 
-
-/* JUDUL PEKERJAAN */
-
 .timeline-content h3 {
     color: #f8fafc;
 
@@ -899,9 +865,6 @@ a {
 
     margin: 6px 0;
 }
-
-
-/* PERUSAHAAN */
 
 .timeline-content h4 {
     color: #94a3b8;
@@ -913,9 +876,6 @@ a {
     line-height: 1.5;
 }
 
-
-/* LOKASI */
-
 .location {
     color: #64748b;
 
@@ -925,9 +885,6 @@ a {
 
     margin: 4px 0 18px;
 }
-
-
-/* LIST EXPERIENCE */
 
 .timeline-content ul {
     padding-left: 18px;
@@ -1025,8 +982,15 @@ a {
     gap: 20px;
 }
 
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
 .project-card {
     position: relative;
+
+    display: block;
 
     min-height: 360px;
 
@@ -1044,6 +1008,25 @@ a {
     overflow: hidden;
 
     transition: 0.4s;
+
+    /*
+       PENTING:
+       Project card adalah <a>.
+       Semua dekorasi link dimatikan.
+    */
+
+    text-decoration: none !important;
+
+    color: inherit !important;
+}
+
+.project-card:link,
+.project-card:visited,
+.project-card:hover,
+.project-card:active {
+    text-decoration: none !important;
+
+    color: inherit !important;
 }
 
 .project-card:hover {
@@ -1054,6 +1037,27 @@ a {
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.3);
 }
+
+
+/* =====================================================
+   PROJECT CARD - SEMUA ISI
+===================================================== */
+
+/*
+   Ini memastikan browser tidak memberikan
+   underline kepada teks di dalam <a>.
+*/
+
+.project-card *,
+.project-card *::before,
+.project-card *::after {
+    text-decoration: none !important;
+}
+
+
+/* =====================================================
+   PROJECT NUMBER
+===================================================== */
 
 .project-number {
     position: absolute;
@@ -1068,6 +1072,11 @@ a {
     font-weight: bold;
 }
 
+
+/* =====================================================
+   PROJECT TYPE
+===================================================== */
+
 .project-type {
     color: var(--primary);
 
@@ -1078,6 +1087,11 @@ a {
     letter-spacing: 2px;
 }
 
+
+/* =====================================================
+   PROJECT TITLE
+===================================================== */
+
 .project-card h3 {
     position: relative;
 
@@ -1086,13 +1100,29 @@ a {
     line-height: 1.2;
 
     margin: 25px 0 18px;
+
+    color: var(--text);
+
+    text-decoration: none !important;
 }
+
+
+/* =====================================================
+   PROJECT DESCRIPTION
+===================================================== */
 
 .project-card > p:not(.project-type) {
     color: var(--text-secondary);
 
     font-size: 14px;
+
+    text-decoration: none !important;
 }
+
+
+/* =====================================================
+   PROJECT TAGS
+===================================================== */
 
 .project-tags {
     display: flex;
@@ -1114,6 +1144,19 @@ a {
     padding: 5px 8px;
 
     border: 1px solid rgba(0, 229, 255, 0.2);
+
+    text-decoration: none !important;
+}
+
+
+/* =====================================================
+   PROJECT CARD HOVER
+===================================================== */
+
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover span {
+    text-decoration: none !important;
 }
 
 
@@ -1637,13 +1680,6 @@ footer {
         padding-left: 0;
     }
 
-
-    /*
-       GARIS MOBILE
-
-       Tetap SOLID.
-    */
-
     .timeline::before {
         left: 5px;
 
@@ -1679,15 +1715,12 @@ footer {
         z-index: 2;
     }
 
-
     .timeline-item:last-child {
         padding-bottom: 0;
     }
 
 
-    /*
-       TITIK TEPAT DI GARIS
-    */
+    /* TITIK TEPAT DI GARIS */
 
     .timeline-item::before {
         left: 0;
