@@ -10,33 +10,6 @@
 
 html {
     scroll-behavior: smooth;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(0, 229, 255, 0.08),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 30%,
-            rgba(124, 58, 237, 0.08),
-            transparent 25%
-        ),
-        var(--bg);
-
-    color: var(--text);
-
-    line-height: 1.7;
 }
 
 :root {
@@ -56,6 +29,29 @@ body {
     --max-width: 1180px;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 229, 255, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(124, 58, 237, 0.08),
+            transparent 25%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
 
 /* =====================================================
    GENERAL
@@ -63,10 +59,6 @@ body {
 
 a {
     color: inherit;
-}
-
-img {
-    max-width: 100%;
 }
 
 ::selection {
@@ -175,7 +167,6 @@ img {
 }
 
 .nav-container {
-    width: 100%;
     max-width: var(--max-width);
 
     margin: auto;
@@ -187,10 +178,6 @@ img {
     align-items: center;
 
     justify-content: space-between;
-
-    gap: 25px;
-
-    min-width: 0;
 }
 
 .logo {
@@ -203,10 +190,6 @@ img {
     font-weight: bold;
 
     letter-spacing: -1px;
-
-    white-space: nowrap;
-
-    flex-shrink: 0;
 }
 
 .logo span {
@@ -219,10 +202,6 @@ img {
     list-style: none;
 
     gap: 28px;
-
-    align-items: center;
-
-    min-width: 0;
 }
 
 .nav-menu a {
@@ -235,8 +214,6 @@ img {
     font-size: 14px;
 
     transition: 0.3s;
-
-    white-space: nowrap;
 }
 
 .nav-menu a:hover {
@@ -269,9 +246,6 @@ img {
 ===================================================== */
 
 .hero {
-    width: 100%;
-    max-width: var(--max-width);
-
     min-height: 100vh;
 
     display: flex;
@@ -280,12 +254,13 @@ img {
 
     padding: 130px 30px 80px;
 
+    max-width: var(--max-width);
+
     margin: auto;
 }
 
 .hero-container {
     width: 100%;
-    min-width: 0;
 
     display: grid;
 
@@ -373,8 +348,6 @@ img {
     color: var(--text-secondary);
 
     font-size: 16px;
-
-    text-align: justify;
 }
 
 .hero-buttons {
@@ -484,8 +457,6 @@ img {
     align-items: center;
 
     min-height: 450px;
-
-    min-width: 0;
 }
 
 .image-glow {
@@ -660,6 +631,18 @@ img {
     font-size: 13px;
 }
 
+.card-one {
+    left: -15px;
+
+    top: 80px;
+}
+
+.card-two {
+    right: -15px;
+
+    bottom: 80px;
+}
+
 
 /* =====================================================
    ABOUT
@@ -671,20 +654,12 @@ img {
     grid-template-columns: 1fr 1fr;
 
     gap: 80px;
-
-    min-width: 0;
-}
-
-.about-text {
-    min-width: 0;
 }
 
 .about-text p {
     color: var(--text-secondary);
 
     margin-bottom: 22px;
-
-    text-align: justify;
 }
 
 .about-text .large-text {
@@ -693,8 +668,6 @@ img {
     font-size: 24px;
 
     line-height: 1.5;
-
-    text-align: justify;
 }
 
 .about-highlights {
@@ -713,8 +686,6 @@ img {
     background: rgba(255, 255, 255, 0.02);
 
     transition: 0.3s;
-
-    min-width: 0;
 }
 
 .highlight-card:hover {
@@ -743,8 +714,6 @@ img {
     color: var(--text-secondary);
 
     font-size: 13px;
-
-    text-align: justify;
 }
 
 
@@ -757,9 +726,12 @@ img {
     position: relative;
 
     width: 100%;
-
-    max-width: 100%;
 }
+
+
+/* =====================================================
+   GARIS UTAMA TIMELINE
+===================================================== */
 
 .timeline::before {
     content: "";
@@ -781,6 +753,11 @@ img {
     z-index: 1;
 }
 
+
+/* =====================================================
+   ITEM EXPERIENCE
+===================================================== */
+
 .timeline-item {
     position: relative;
 
@@ -793,13 +770,16 @@ img {
     padding-bottom: 65px;
 
     z-index: 2;
-
-    min-width: 0;
 }
 
 .timeline-item:last-child {
     padding-bottom: 0;
 }
+
+
+/* =====================================================
+   TITIK TIMELINE
+===================================================== */
 
 .timeline-item::before {
     content: "";
@@ -826,6 +806,11 @@ img {
     z-index: 5;
 }
 
+
+/* =====================================================
+   TANGGAL EXPERIENCE
+===================================================== */
+
 .timeline-date {
     color: #00e5ff;
 
@@ -845,6 +830,11 @@ img {
 
     z-index: 3;
 }
+
+
+/* =====================================================
+   KONTEN EXPERIENCE
+===================================================== */
 
 .timeline-content {
     padding-left: 0;
@@ -910,8 +900,6 @@ img {
     padding-left: 5px;
 
     line-height: 1.65;
-
-    text-align: justify;
 }
 
 
@@ -925,8 +913,6 @@ img {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
-
-    min-width: 0;
 }
 
 .skill-category {
@@ -937,8 +923,6 @@ img {
     border: 1px solid var(--border);
 
     transition: 0.3s;
-
-    min-width: 0;
 }
 
 .skill-category:hover {
@@ -996,9 +980,12 @@ img {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
-
-    min-width: 0;
 }
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
 
 .project-card {
     position: relative;
@@ -1022,24 +1009,24 @@ img {
 
     transition: 0.4s;
 
+    /*
+       PENTING:
+       Project card adalah <a>.
+       Semua dekorasi link dimatikan.
+    */
+
     text-decoration: none !important;
 
     color: inherit !important;
-
-    min-width: 0;
 }
 
 .project-card:link,
 .project-card:visited,
 .project-card:hover,
-.project-card:active,
-.project-card:focus,
-.project-card:focus-visible {
+.project-card:active {
     text-decoration: none !important;
 
     color: inherit !important;
-
-    outline: none !important;
 }
 
 .project-card:hover {
@@ -1051,17 +1038,26 @@ img {
         0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
+
+/* =====================================================
+   PROJECT CARD - SEMUA ISI
+===================================================== */
+
+/*
+   Ini memastikan browser tidak memberikan
+   underline kepada teks di dalam <a>.
+*/
+
 .project-card *,
 .project-card *::before,
 .project-card *::after {
     text-decoration: none !important;
-
-    text-decoration-line: none !important;
-
-    text-decoration-style: none !important;
-
-    text-decoration-color: transparent !important;
 }
+
+
+/* =====================================================
+   PROJECT NUMBER
+===================================================== */
 
 .project-number {
     position: absolute;
@@ -1076,6 +1072,11 @@ img {
     font-weight: bold;
 }
 
+
+/* =====================================================
+   PROJECT TYPE
+===================================================== */
+
 .project-type {
     color: var(--primary);
 
@@ -1085,6 +1086,11 @@ img {
 
     letter-spacing: 2px;
 }
+
+
+/* =====================================================
+   PROJECT TITLE
+===================================================== */
 
 .project-card h3 {
     position: relative;
@@ -1100,15 +1106,23 @@ img {
     text-decoration: none !important;
 }
 
+
+/* =====================================================
+   PROJECT DESCRIPTION
+===================================================== */
+
 .project-card > p:not(.project-type) {
     color: var(--text-secondary);
 
     font-size: 14px;
 
     text-decoration: none !important;
-
-    text-align: justify;
 }
+
+
+/* =====================================================
+   PROJECT TAGS
+===================================================== */
 
 .project-tags {
     display: flex;
@@ -1133,6 +1147,11 @@ img {
 
     text-decoration: none !important;
 }
+
+
+/* =====================================================
+   PROJECT CARD HOVER
+===================================================== */
 
 .project-card:hover h3,
 .project-card:hover p,
@@ -1163,8 +1182,6 @@ img {
     background: rgba(255, 255, 255, 0.02);
 
     border: 1px solid var(--border);
-
-    min-width: 0;
 }
 
 .education-year {
@@ -1195,8 +1212,6 @@ img {
 
 .education-card p {
     color: var(--text-secondary);
-
-    text-align: justify;
 }
 
 .education-card strong {
@@ -1232,8 +1247,6 @@ img {
     padding: 20px 0;
 
     border-bottom: 1px solid var(--border);
-
-    min-width: 0;
 }
 
 .certificate-item span {
@@ -1248,8 +1261,6 @@ img {
     color: var(--text-secondary);
 
     font-size: 14px;
-
-    text-align: justify;
 }
 
 
@@ -1296,8 +1307,6 @@ img {
     margin: 25px auto 45px;
 
     color: var(--text-secondary);
-
-    text-align: justify;
 }
 
 .contact-grid {
@@ -1326,8 +1335,6 @@ img {
     text-decoration: none;
 
     transition: 0.3s;
-
-    min-width: 0;
 }
 
 .contact-card:hover {
@@ -1351,8 +1358,6 @@ img {
     border: 1px solid rgba(0, 229, 255, 0.3);
 
     font-family: monospace;
-
-    flex-shrink: 0;
 }
 
 .contact-card small {
@@ -1373,8 +1378,6 @@ img {
     font-size: 12px;
 
     color: var(--text);
-
-    overflow-wrap: anywhere;
 }
 
 
@@ -1386,8 +1389,6 @@ footer {
     border-top: 1px solid var(--border);
 
     padding: 30px;
-
-    width: 100%;
 }
 
 .footer-container {
@@ -1419,32 +1420,8 @@ footer {
 
     /* NAVBAR */
 
-    .nav-container {
-        padding: 17px 20px;
-
-        gap: 20px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
     .nav-menu {
         gap: 15px;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .nav-menu::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav-menu li {
-        flex-shrink: 0;
     }
 
 
@@ -1555,84 +1532,24 @@ footer {
 
 @media (max-width: 700px) {
 
-    /* =================================================
-       NAVBAR MOBILE
-    ================================================= */
+    /* NAVBAR */
 
     .nav-container {
-        width: 100%;
-
-        padding: 12px 12px;
-
-        gap: 10px;
-
-        overflow: hidden;
-
-        justify-content: flex-start;
-    }
-
-    .logo {
-        font-size: 14px;
-
-        letter-spacing: -0.7px;
-
-        max-width: 120px;
-
-        overflow: hidden;
-
-        text-overflow: ellipsis;
+        padding: 15px 20px;
     }
 
     .nav-menu {
-        display: flex;
-
-        gap: 15px;
-
-        flex: 1;
-
-        min-width: 0;
-
-        overflow-x: auto;
-
-        overflow-y: hidden;
-
-        scrollbar-width: none;
-
-        -webkit-overflow-scrolling: touch;
-
-        padding: 3px 2px 7px;
-    }
-
-    .nav-menu::-webkit-scrollbar {
         display: none;
-    }
-
-    .nav-menu li {
-        flex-shrink: 0;
-    }
-
-    .nav-menu a {
-        font-size: 10px;
-
-        white-space: nowrap;
-    }
-
-    .nav-menu a::after {
-        bottom: -4px;
     }
 
 
     /* GENERAL */
 
     .section {
-        width: 100%;
-
         padding: 85px 20px;
     }
 
     .dark-section {
-        width: 100%;
-
         padding-left: 20px;
 
         padding-right: 20px;
@@ -1642,14 +1559,10 @@ footer {
     /* HERO */
 
     .hero {
-        width: 100%;
-
         padding: 120px 20px 70px;
     }
 
     .hero-container {
-        width: 100%;
-
         gap: 50px;
     }
 
@@ -1657,8 +1570,6 @@ footer {
         font-size: 48px;
 
         letter-spacing: -2px;
-
-        overflow-wrap: anywhere;
     }
 
     .hero h2 {
@@ -1667,8 +1578,6 @@ footer {
 
     .hero-description {
         font-size: 14px;
-
-        text-align: justify;
     }
 
     .hero-buttons {
@@ -1681,8 +1590,6 @@ footer {
 
     .hero-stats {
         gap: 20px;
-
-        width: 100%;
     }
 
     .hero-stats strong {
@@ -1698,8 +1605,6 @@ footer {
 
     .hero-image-wrapper {
         min-height: 380px;
-
-        width: 100%;
     }
 
     .image-card {
@@ -1749,8 +1654,6 @@ footer {
         gap: 15px;
 
         margin-bottom: 45px;
-
-        min-width: 0;
     }
 
     .section-heading h2 {
@@ -1762,12 +1665,6 @@ footer {
 
     .about-highlights {
         grid-template-columns: 1fr;
-    }
-
-    .about-text p,
-    .about-text .large-text,
-    .highlight-card p {
-        text-align: justify;
     }
 
 
@@ -1799,6 +1696,9 @@ footer {
         z-index: 1;
     }
 
+
+    /* ITEM */
+
     .timeline-item {
         position: relative;
 
@@ -1813,13 +1713,14 @@ footer {
         padding-bottom: 55px;
 
         z-index: 2;
-
-        min-width: 0;
     }
 
     .timeline-item:last-child {
         padding-bottom: 0;
     }
+
+
+    /* TITIK TEPAT DI GARIS */
 
     .timeline-item::before {
         left: 0;
@@ -1841,6 +1742,9 @@ footer {
         z-index: 5;
     }
 
+
+    /* TANGGAL */
+
     .timeline-date {
         text-align: left;
 
@@ -1855,10 +1759,11 @@ footer {
         margin-bottom: 5px;
     }
 
+
+    /* CONTENT */
+
     .timeline-content {
         padding-left: 0;
-
-        min-width: 0;
     }
 
     .timeline-content h3 {
@@ -1883,8 +1788,6 @@ footer {
         font-size: 14px;
 
         margin-bottom: 9px;
-
-        text-align: justify;
     }
 
 
@@ -1892,20 +1795,6 @@ footer {
 
     .projects-grid {
         grid-template-columns: 1fr;
-
-        width: 100%;
-    }
-
-    .project-card {
-        width: 100%;
-
-        min-width: 0;
-
-        padding: 28px 24px;
-    }
-
-    .project-card > p:not(.project-type) {
-        text-align: justify;
     }
 
 
@@ -1915,12 +1804,6 @@ footer {
         grid-template-columns: 1fr;
 
         gap: 10px;
-
-        width: 100%;
-    }
-
-    .education-card p {
-        text-align: justify;
     }
 
 
@@ -1928,14 +1811,6 @@ footer {
 
     .certificate-item {
         grid-template-columns: 60px 1fr;
-
-        min-width: 0;
-    }
-
-    .certificate-item p {
-        text-align: justify;
-
-        overflow-wrap: anywhere;
     }
 
 
@@ -1943,10 +1818,6 @@ footer {
 
     .contact-container h2 {
         font-size: 40px;
-    }
-
-    .contact-container > p:not(.section-label) {
-        text-align: justify;
     }
 
 
@@ -1965,33 +1836,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 400px) {
-
-    /* NAVBAR */
-
-    .nav-container {
-        padding-left: 10px;
-
-        padding-right: 10px;
-
-        gap: 8px;
-    }
-
-    .logo {
-        font-size: 12px;
-
-        max-width: 105px;
-    }
-
-    .nav-menu {
-        gap: 13px;
-    }
-
-    .nav-menu a {
-        font-size: 9px;
-    }
-
-
-    /* HERO */
 
     .hero h1 {
         font-size: 40px;
@@ -2032,7 +1876,7 @@ footer {
     }
 
 
-    /* TIMELINE */
+    /* TIMELINE SMALL HP */
 
     .timeline-item {
         padding-left: 27px;
